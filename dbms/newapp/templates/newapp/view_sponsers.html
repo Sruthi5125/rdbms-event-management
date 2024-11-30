@@ -1,0 +1,106 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <center>
+    <table class="table table-striped table-bordered table-sm">
+      <thead class="thead-dark">
+      <tr>
+        <th>Sponsor ID</th>
+        <th>Sponsor Name</th>
+        <th>Amount</th>
+        <th>Mode of Transaction</th>
+        <th>Ratings</th>
+        <th>Sponsor Contact Number</th>
+        <th>Event</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for us in userdata %}
+        <tr>
+          <td>{{ us.sponser_id }}</td>
+          <td>{{ us.sponser_name }}</td>
+          <td>{{ us.amount }}</td>
+          <td>{{ us.mode_of_transaction}}</td>
+          <td>{{ us.ratings}}</td>
+          <td>{{ us.sponser_contactno }}</td>
+          <td>{{ us.address }}</td>
+          <td>{{ us.event }}</td>
+          <td>
+            <a href="/delete_sponsers/{{ us.sponser_id }}"> Delete </a>
+          </td>
+          <td>
+            <a href="/update_sponsers/{{ us.sponser_id }}"> Edit </a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </center>
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-4">Sponsor List</h1>
+
+    <!-- Sponsor Table -->
+    <table class="table table-striped table-bordered table-hover table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>Sponsor ID</th>
+          <th>Sponsor Name</th>
+          <th>Amount</th>
+          <th>Mode of Transaction</th>
+          <th>Ratings</th>
+          <th>Sponsor Contact Number</th>
+          <th>Event</th>
+          <th>Actions</th> <!-- Merged Action buttons under one header -->
+        </tr>
+      </thead>
+      <tbody>
+        {% if userdata %}
+          {% for us in userdata %}
+            <tr>
+              <td>{{ us.sponser_id }}</td>
+              <td>{{ us.sponser_name }}</td>
+              <td>{{ us.amount }}</td>
+              <td>{{ us.mode_of_transaction }}</td>
+              <td>{{ us.ratings }}</td>
+              <td>{{ us.sponser_contactno }}</td>
+              <td>{{ us.event }}</td>
+              <td>
+                <a href="/delete_sponsers/{{ us.sponser_id }}" class="btn btn-danger btn-sm mx-1">Delete</a>
+                <a href="/update_sponsers/{{ us.sponser_id }}" class="btn btn-primary btn-sm mx-1">Edit</a>
+              </td>
+            </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="8" class="text-center">No sponsors found.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Optional JavaScript for Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

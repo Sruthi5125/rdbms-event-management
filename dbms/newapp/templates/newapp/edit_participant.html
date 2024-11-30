@@ -1,0 +1,193 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center>
+        <form method="POST" action="/update_participant/{{user.participant_id}}">
+            {% csrf_token %}
+            <div class="container">
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <h3>Update Details</h3>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participant ID:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="participant_id" id="participant_id" required maxlength="20" value="{{ user.participant_id }}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participant Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="participant_name" id="participant_name" required maxlength="100" value="{{ user.participant_name }}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">College:</label>
+                    <div class="col-sm-4">
+                        <input type="date" name="college" id="college" required maxlength="100" value="{{ user.college }}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participant Age:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="participant_age" id="participant_age" required maxlength="100" value="{{ user.participant_age }}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participant Gender:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="participant_gender" id="participant_gender" required maxlength="254" value="{{ user.participant_gender  }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Department Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="dept_name" id="dept_name" required maxlength="15" value="{{ user.dept_name }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participant Contact:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="participant_contact" id="participant_contact" required maxlength="15" value="{{ user.participant_contact }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participant Email:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="participant_email" id="participant_email" required maxlength="15" value="{{ user.participant_email }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Payment Status:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="payment_status " id="payment_status" required maxlength="15" value="{{ user.payment_status  }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Registration Date:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="registration_date" id="registration_date" required maxlength="15" value="{{ user.registration_date  }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Event Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="event" id="event" required maxlength="15" value="{{ user.event  }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Contest Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="contest" id="contest" required maxlength="15" value="{{ user.contest}}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </center>
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Participant Details</title>
+
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Update Participant Details</h3>
+        <form method="POST" action="/update_participant/{{ user.participant_id }}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="mb-3">
+                        <label for="participant_id" class="form-label">Participant ID:</label>
+                        <input type="text" name="participant_id" id="participant_id" required maxlength="20" class="form-control" value="{{ user.participant_id }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="participant_name" class="form-label">Participant Name:</label>
+                        <input type="text" name="participant_name" id="participant_name" required maxlength="100" class="form-control" value="{{ user.participant_name }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="college" class="form-label">College:</label>
+                        <input type="text" name="college" id="college" required maxlength="100" class="form-control" value="{{ user.college }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="participant_age" class="form-label">Participant Age:</label>
+                        <input type="number" name="participant_age" id="participant_age" required min="0" class="form-control" value="{{ user.participant_age }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="participant_gender" class="form-label">Participant Gender:</label>
+                        <input type="text" name="participant_gender" id="participant_gender" required maxlength="254" class="form-control" value="{{ user.participant_gender }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dept_name" class="form-label">Department Name:</label>
+                        <input type="text" name="dept_name" id="dept_name" required maxlength="15" class="form-control" value="{{ user.dept_name }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="participant_contact" class="form-label">Participant Contact:</label>
+                        <input type="text" name="participant_contact" id="participant_contact" required maxlength="15" class="form-control" value="{{ user.participant_contact }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="participant_email" class="form-label">Participant Email:</label>
+                        <input type="email" name="participant_email" id="participant_email" required class="form-control" value="{{ user.participant_email }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="payment_status" class="form-label">Payment Status:</label>
+                        <input type="text" name="payment_status" id="payment_status" required maxlength="15" class="form-control" value="{{ user.payment_status }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="registration_date" class="form-label">Registration Date:</label>
+                        <input type="date" name="registration_date" id="registration_date" required class="form-control" value="{{ user.registration_date }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="event" class="form-label">Event Name:</label>
+                        <input type="text" name="event" id="event" required maxlength="15" class="form-control" value="{{ user.event }}" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contest" class="form-label">Contest Name:</label>
+                        <input type="text" name="contest" id="contest" required maxlength="15" class="form-control" value="{{ user.contest }}" />
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

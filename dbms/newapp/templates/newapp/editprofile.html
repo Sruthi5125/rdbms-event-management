@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center>
+        <form method="POST" action="/updateprofile/{{user.eid}}">
+            {% csrf_token %}
+            <div class="container">
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <h3>Update Details</h3>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Event ID:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="eid" id="eid" required maxlength="20" value="{{ user.eid }}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Event Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="ename" id="ename" required maxlength="100" value="{{ user.ename }}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-4">
+                        <input type="email" name="eemail" id="eemail" required maxlength="254" value="{{ user.eemail  }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Contact:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="econtact" id="econtact" required maxlength="15" value="{{ user.econtact }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Start Date:</label>
+                    <div class="col-sm-4">
+                        <input type="date" name="`start_date" id="start_date" required maxlength="15" value="{{ user.start_date }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">End Date:</label>
+                    <div class="col-sm-4">
+                        <input type="date" name="end_date" id="end_date" required maxlength="15" value="{{ user.end_date }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Event Coordinator:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="event_coordinator" id="event_coordinator" required maxlength="15" value="{{ user.event_coordinator }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Department ID:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="dept" id="dept" required maxlength="15" value="{{ user.dept }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Venue:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="v" id="v" required maxlength="15" value="{{ user.v }}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </center>
+</body>
+</html>

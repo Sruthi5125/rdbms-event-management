@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for contest in contests %}
+<option value="{{ contest.pk }}">{{ contest.contest_name }}</option>
+{% endfor %}

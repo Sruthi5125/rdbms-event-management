@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form name='Events' method='post' action='../insertevent/'>
+            {% csrf_token %}
+        <pre>
+            EventID     : <input type='text' name="teid" value="" width="200" ><br>
+            NAME    : <input type="text" name="tename" value="" width="200" ><br>
+            REGISTRATION_FEE : <input type="text" name="teregistrationfee" value="" width="200" ><br>
+            EMAIL   : <input type="text" name="teemail" value="" width="200" ><br>
+            CONTACT : <input type="text" name="tecontact" value="" width="200" ><br>
+            START_DATE : <input type="date" name="tstart_date" value="" width="200" ><br>
+            END_DATE : <input type="date" name="tend_date" value="" width="200" ><br>
+            EVENT_COORDINATOR : <input type="text" name="tevent_coordinator" value="" width="200" ><br>
+            DEPARTMENT : <input type="text" name="tdept" value="" width="200" ><br>
+            <input type="submit" name="reg" value="Click to add event" width="200" ><br>
+        </pre>
+    </form>
+</center>
+
+</body>
+</html>
